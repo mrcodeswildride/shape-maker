@@ -1,73 +1,90 @@
-var sizeInput = document.getElementById("size");
-var lineButton = document.getElementById("line");
-var squareButton = document.getElementById("square");
-var rightTriangleButton = document.getElementById("rightTriangle");
-var isoscelesTriangleButton = document.getElementById("isoscelesTriangle");
-var box = document.getElementById("box");
+let size = document.getElementById(`size`)
+let lineButton = document.getElementById(`lineButton`)
+let squareButton = document.getElementById(`squareButton`)
+let right1Button = document.getElementById(`right1Button`)
+let right2Button = document.getElementById(`right2Button`)
+let isoButton = document.getElementById(`isoButton`)
+let box = document.getElementById(`box`)
 
-lineButton.addEventListener("click", makeLine);
-squareButton.addEventListener("click", makeSquare);
-rightTriangleButton.addEventListener("click", makeRightTriangle);
-isoscelesTriangleButton.addEventListener("click", makeIsoscelesTriangle);
+lineButton.addEventListener(`click`, line)
+squareButton.addEventListener(`click`, square)
+right1Button.addEventListener(`click`, right1)
+right2Button.addEventListener(`click`, right2)
+isoButton.addEventListener(`click`, iso)
 
-function makeLine() {
-    var size = sizeInput.value.trim();
+function line() {
+  let sizeValue = size.value.trim()
 
-    if (!isNaN(size)) {
-        box.innerHTML = "";
+  if (sizeValue != `` && !isNaN(sizeValue)) {
+    box.innerHTML = ``
 
-        for (var i = 0; i < size; i++) {
-            draw(i, 0);
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      draw(i, 0)
     }
+  }
 }
 
-function makeSquare() {
-    var size = sizeInput.value.trim();
+function square() {
+  let sizeValue = size.value.trim()
 
-    if (!isNaN(size)) {
-        box.innerHTML = "";
+  if (sizeValue != `` && !isNaN(sizeValue)) {
+    box.innerHTML = ``
 
-        for (var i = 0; i < size; i++) {
-            for (var j = 0; j < size; j++) {
-                draw(j, i);
-            }
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = 0; j < sizeValue; j++) {
+        draw(j, i)
+      }
     }
+  }
 }
 
-function makeRightTriangle() {
-    var size = sizeInput.value.trim();
+function right1() {
+  let sizeValue = size.value.trim()
 
-    if (!isNaN(size)) {
-        box.innerHTML = "";
+  if (sizeValue != `` && !isNaN(sizeValue)) {
+    box.innerHTML = ``
 
-        for (var i = 0; i < size; i++) {
-            for (var j = i; j < size; j++) {
-                draw(j, i);
-            }
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = i; j < sizeValue; j++) {
+        draw(j, i)
+      }
     }
+  }
 }
 
-function makeIsoscelesTriangle() {
-    var size = sizeInput.value.trim();
+function right2() {
+  let sizeValue = size.value.trim()
 
-    if (!isNaN(size)) {
-        box.innerHTML = "";
+  if (sizeValue != `` && !isNaN(sizeValue)) {
+    box.innerHTML = ``
 
-        for (var i = 0; i < size; i++) {
-            for (var j = i / 2; j < size - (i / 2); j++) {
-                draw(j, i);
-            }
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = 0; j < sizeValue - i; j++) {
+        draw(j, i)
+      }
     }
+  }
+}
+
+function iso() {
+  let sizeValue = size.value.trim()
+
+  if (sizeValue != `` && !isNaN(sizeValue)) {
+    box.innerHTML = ``
+
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = i / 2; j < sizeValue - (i / 2); j++) {
+        draw(j, i)
+      }
+    }
+  }
 }
 
 function draw(x, y) {
-    var square = document.createElement("div");
-    square.classList.add("square");
-    square.style.left = (x * 10) + "px";
-    square.style.top = (y * 10) + "px";
-    box.append(square);
+  let ball = document.createElement(`div`)
+  ball.classList.add(`ball`)
+  ball.style.left = `${x * 10}px`
+  ball.style.top = `${y * 10}px`
+
+  box.append(ball)
 }
