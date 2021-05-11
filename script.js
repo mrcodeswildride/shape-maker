@@ -12,19 +12,18 @@ right1Button.addEventListener(`click`, right1)
 right2Button.addEventListener(`click`, right2)
 isoButton.addEventListener(`click`, iso)
 
+size.focus()
+
 function line() {
   let sizeValue = size.value.trim()
 
-  if (sizeValue != `` && !isNaN(sizeValue)) {
-    if (sizeValue > 50) {
-      box.innerHTML = `Number cannot be more than 50.`
-    }
-    else {
-      box.innerHTML = ``
+  if (sizeValue > 50) {
+    box.innerHTML = `Number cannot be more than 50.`
+  } else {
+    box.innerHTML = ``
 
-      for (let i = 0; i < sizeValue; i++) {
-        draw(i, 0)
-      }
+    for (let i = 0; i < sizeValue; i++) {
+      draw(i, 0)
     }
   }
 }
@@ -32,17 +31,14 @@ function line() {
 function square() {
   let sizeValue = size.value.trim()
 
-  if (sizeValue != `` && !isNaN(sizeValue)) {
-    if (sizeValue > 50) {
-      box.innerHTML = `Number cannot be more than 50.`
-    }
-    else {
-      box.innerHTML = ``
+  if (sizeValue > 50) {
+    box.innerHTML = `Number cannot be more than 50.`
+  } else {
+    box.innerHTML = ``
 
-      for (let i = 0; i < sizeValue; i++) {
-        for (let j = 0; j < sizeValue; j++) {
-          draw(j, i)
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = 0; j < sizeValue; j++) {
+        draw(j, i)
       }
     }
   }
@@ -51,17 +47,14 @@ function square() {
 function right1() {
   let sizeValue = size.value.trim()
 
-  if (sizeValue != `` && !isNaN(sizeValue)) {
-    if (sizeValue > 50) {
-      box.innerHTML = `Number cannot be more than 50.`
-    }
-    else {
-      box.innerHTML = ``
+  if (sizeValue > 50) {
+    box.innerHTML = `Number cannot be more than 50.`
+  } else {
+    box.innerHTML = ``
 
-      for (let i = 0; i < sizeValue; i++) {
-        for (let j = i; j < sizeValue; j++) {
-          draw(j, i)
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = i; j < sizeValue; j++) {
+        draw(j, i)
       }
     }
   }
@@ -70,17 +63,14 @@ function right1() {
 function right2() {
   let sizeValue = size.value.trim()
 
-  if (sizeValue != `` && !isNaN(sizeValue)) {
-    if (sizeValue > 50) {
-      box.innerHTML = `Number cannot be more than 50.`
-    }
-    else {
-      box.innerHTML = ``
+  if (sizeValue > 50) {
+    box.innerHTML = `Number cannot be more than 50.`
+  } else {
+    box.innerHTML = ``
 
-      for (let i = 0; i < sizeValue; i++) {
-        for (let j = 0; j < sizeValue - i; j++) {
-          draw(j, i)
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = 0; j < sizeValue - i; j++) {
+        draw(j, i)
       }
     }
   }
@@ -89,17 +79,14 @@ function right2() {
 function iso() {
   let sizeValue = size.value.trim()
 
-  if (sizeValue != `` && !isNaN(sizeValue)) {
-    if (sizeValue > 50) {
-      box.innerHTML = `Number cannot be more than 50.`
-    }
-    else {
-      box.innerHTML = ``
+  if (sizeValue > 50) {
+    box.innerHTML = `Number cannot be more than 50.`
+  } else {
+    box.innerHTML = ``
 
-      for (let i = 0; i < sizeValue; i++) {
-        for (let j = i / 2; j < sizeValue - (i / 2); j++) {
-          draw(j, i)
-        }
+    for (let i = 0; i < sizeValue; i++) {
+      for (let j = i / 2; j < sizeValue - i / 2; j++) {
+        draw(j, i)
       }
     }
   }

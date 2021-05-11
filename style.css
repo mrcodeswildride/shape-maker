@@ -20,7 +20,7 @@ input {
   width: 8px;
   height: 8px;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: black;
   position: absolute;
 }

@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Shape Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-	<title>Shape Maker</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.5">
-	<link href="style.css" rel="stylesheet">
-	<script src="script.js" defer>
+  <body>
+    <h1>Shape Maker</h1>
 
-	</script>
-</head>
+    <input type="number" min="0" max="50" placeholder="type a number" id="size" />
+    <button id="lineButton">Line</button>
+    <button id="squareButton">Square</button>
+    <button id="right1Button">Right triangle 1</button>
+    <button id="right2Button">Right triangle 2</button>
+    <button id="isoButton">Isosceles triangle</button>
 
-<body>
-	<h1>Shape Maker</h1>
-
-	<input type="number" min="0" max="50" placeholder="type a number" id="size">
-  <button id="lineButton">Line</button>
-  <button id="squareButton">Square</button>
-  <button id="right1Button">Right triangle 1</button>
-  <button id="right2Button">Right triangle 2</button>
-  <button id="isoButton">Isosceles triangle</button>
-
-  <div id="box"></div>
-</body>
-
+    <div id="box"></div>
+  </body>
 </html>
